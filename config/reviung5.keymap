@@ -23,7 +23,6 @@
                      &mo BLE      &kp C_PREVIOUS  &kp KP_ENTER   &kp BSPC   &kp C_MUTE
                 // ╰─────────────┴──────────────┴──────────────────┴─────────────┴─────────────╯
               >;
-              //sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
               sensor-bindings = <&inc_dec_kp LEFT RIGHT>;
             };
 
@@ -34,6 +33,7 @@
                      &trans     &out OUT_TOG   &bt BT_PRV    &bt BT_NXT    &bt BT_CLR
                 // ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯
               >;
+              sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
             };
         };
 };
