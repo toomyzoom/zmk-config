@@ -19,9 +19,9 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_press &kp LWIN>
-                , <&macro_tap &kp SPACE>
-                , <&macro_release &kp LWIN>
+                = <&macro_press &kp RSHIFT &kp RCTRL>
+                , <&macro_tap &kp F12>
+                , <&macro_release &kp RSHIFT &kp RCTRL>
                 ;
         };
         mpv_next: mpv_next {
@@ -103,7 +103,7 @@
               display-name = "BLE";
               bindings = <
                 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-                     &trans     &out OUT_TOG   &bt BT_PRV    &bt BT_NXT    &bt BT_CLR
+                     &trans     &ext_power EP_OFF   &bt BT_PRV    &bt BT_NXT    &bt BT_CLR
                 // ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯
               >;
               sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -113,7 +113,7 @@
               display-name = "WIN";
               bindings = <
                 // ╭───────────────────┬──────────────┬──────────────────┬─────────────┬─────────────╮
-                     &ext_power EP_OFF  &mpv_prev      &mpv_tog_play      &mpv_next     &to_ble
+                     &mo BLE             &mpv_prev      &mpv_tog_play      &mpv_next     &to_ble
                 // ╰───────────────────┴──────────────┴──────────────────┴─────────────┴─────────────╯
               >;
               sensor-bindings = <&rot_encoder>;
