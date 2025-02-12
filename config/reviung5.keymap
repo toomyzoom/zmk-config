@@ -60,6 +60,22 @@
                 , <&macro_release &kp RCTRL>
                 ;
         };
+        to_ble: to_ble {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&out OUT_BLE>
+                , <&to BLE>
+                ;
+        };
+        to_usb: to_usb {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&out OUT_USB>
+                , <&to WIN>
+                ;
+        };
     };
 };
 / {
@@ -67,7 +83,7 @@
             rot_encoder: rot_encoder {
               compatible = "zmk,behavior-sensor-rotate";
               #sensor-binding-cells = <0>;
-              bindings = <&mpv_bkwd>, <&mpv_fwd>;
+              bindings = <&mpv_fwd>, <&mpv_bkwd>;
             };
         };
         keymap {
@@ -77,7 +93,7 @@
               display-name = "BASE";
               bindings = <
                 // ╭─────────────┬──────────────┬──────────────────┬─────────────┬─────────────╮
-                     &mo BLE      &kp C_PREVIOUS   &kp KP_ENTER      &kp BSPC      &tog WIN
+                     &mo BLE      &kp C_PREVIOUS   &kp KP_ENTER      &kp BSPC      &to_usb
                 // ╰─────────────┴──────────────┴──────────────────┴─────────────┴─────────────╯
               >;
               sensor-bindings = <&inc_dec_kp LEFT RIGHT>;
@@ -97,7 +113,7 @@
               display-name = "WIN";
               bindings = <
                 // ╭───────────────────┬──────────────┬──────────────────┬─────────────┬─────────────╮
-                     &ext_power EP_OFF  &mpv_prev      &mpv_tog_play      &mpv_next     &tog WIN
+                     &ext_power EP_OFF  &mpv_prev      &mpv_tog_play      &mpv_next     &to_ble
                 // ╰───────────────────┴──────────────┴──────────────────┴─────────────┴─────────────╯
               >;
               sensor-bindings = <&rot_encoder>;
