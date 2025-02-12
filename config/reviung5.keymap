@@ -65,7 +65,7 @@
             #binding-cells = <0>;
             bindings
                 = <&out OUT_BLE>
-                , <&to BLE>
+                , <&to BASE>
                 ;
         };
         to_usb: to_usb {
@@ -96,7 +96,7 @@
                      &mo BLE      &kp C_PREVIOUS   &kp KP_ENTER      &kp BSPC      &to_usb
                 // ╰─────────────┴──────────────┴──────────────────┴─────────────┴─────────────╯
               >;
-              sensor-bindings = <&inc_dec_kp LEFT RIGHT>;
+              sensor-bindings = <&inc_dec_kp RIGHT LEFT>;
             };
 
             ble_layer {
