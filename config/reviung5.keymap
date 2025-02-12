@@ -95,14 +95,14 @@
               #sensor-binding-cells = <0>;
               bindings = <&mpv_bkwd>, <&mpv_fwd>;
             };
-            mo_to_bt: behavior_mo_to {
+            mo_to_bt: mo_to_bt {
               compatible = "zmk,behavior-hold-tap";
               #binding-cells = <2>;
               flavor = "hold-preferred";
               tapping-term-ms = <200>;
               bindings = <&mo BLE>, <&out_to OUT_BLE BT>;
             };
-            mo_to_win: behavior_mo_to {
+            mo_to_win: mo_to_win {
               compatible = "zmk,behavior-hold-tap";
               #binding-cells = <2>;
               flavor = "hold-preferred";
