@@ -83,7 +83,7 @@
             rot_encoder: rot_encoder {
               compatible = "zmk,behavior-sensor-rotate";
               #sensor-binding-cells = <0>;
-              bindings = <&mpv_fwd>, <&mpv_bkwd>;
+              bindings = <&mpv_bkwd>, <&mpv_fwd>;
             };
         };
         keymap {
@@ -106,7 +106,7 @@
                      &mo BLE      &kp C_PREVIOUS   &kp KP_ENTER      &kp BSPC      &to_usb
                 // ╰─────────────┴──────────────┴──────────────────┴─────────────┴─────────────╯
               >;
-              sensor-bindings = <&inc_dec_kp RIGHT LEFT>;
+              sensor-bindings = <&inc_dec_kp LEFT RIGHT>;
             };
 
             ble_layer {
