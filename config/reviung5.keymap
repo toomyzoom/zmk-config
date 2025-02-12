@@ -110,7 +110,7 @@
               display-name = "WIN";
               bindings = <
                 // ╭─────────────────────────┬──────────────┬──────────────────┬─────────────┬─────────────╮
-                     &mo_to BLE OUT_BLE BT     &mpv_prev      &mpv_tog_play      &mpv_next     &to_ble
+                     &out_to OUT_BLE BT     &mpv_prev      &mpv_tog_play      &mpv_next     &to_ble
                 // ╰─────────────────────────┴──────────────┴──────────────────┴─────────────┴─────────────╯
               >;
               sensor-bindings = <&rot_encoder>;
@@ -120,7 +120,7 @@
               display-name = "BT";
               bindings = <
                 // ╭─────────────────────────┬────────────────────┬──────────────────┬─────────────┬─────────────╮
-                     &mo_to BLE OUT_USB WIN     &kp C_PREVIOUS        &kp KP_ENTER      &kp BSPC      &to_usb
+                     &out_to OUT_USB WIN     &kp C_PREVIOUS        &kp KP_ENTER      &kp BSPC      &to_usb
                 // ╰─────────────────────────┴────────────────────┴──────────────────┴─────────────┴─────────────╯
               >;
               sensor-bindings = <&inc_dec_kp LEFT RIGHT>;
