@@ -63,6 +63,13 @@
     };
 };
 / {
+	behaviors {
+            rot_encoder: rot_encoder {
+              compatible = "zmk,behavior-sensor-rotate";
+              #sensor-binding-cells = <0>;
+              bindings = <&mpv_bkwd>, <&mpv_fwd>;
+            };
+        };
         keymap {
             compatible = "zmk,keymap";
 
@@ -93,7 +100,7 @@
                      &ext_power EP_OFF  &mpv_prev      &mpv_tog_play      &mpv_next     &tog WIN
                 // ╰───────────────────┴──────────────┴──────────────────┴─────────────┴─────────────╯
               >;
-              sensor-bindings = <&inc_dec_kp &mpv_fwd &mpv_bkwd>;
+              sensor-bindings = <&rot_encoder>;
             };
 
         };
