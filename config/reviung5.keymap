@@ -76,14 +76,31 @@
                 , <&to WIN>
                 ;
         };
+        out_to: out_to {
+            label = "out_to";
+            compatible = "zmk,behavior-macro-two-param";
+            #binding-cells = <2>;
+            bindings
+                = <&macro_param_1to1>
+                , <&out MACRO_PLACEHOLDER>
+                , <&macro_param_2to1>
+                , <&to MACRO_PLACEHOLDER>;
+        };
     };
 };
 / {
-	behaviors {
+        behaviors {
             rot_encoder: rot_encoder {
               compatible = "zmk,behavior-sensor-rotate";
               #sensor-binding-cells = <0>;
               bindings = <&mpv_bkwd>, <&mpv_fwd>;
+            };
+            mo_to: behavior_mo_to {
+              compatible = "zmk,behavior-hold-tap";
+              #binding-cells = <2>;
+              flavor = "hold-preferred";
+              tapping-term-ms = <200>;
+              bindings = <&mo>, <&out_to>;
             };
         };
         keymap {
@@ -92,19 +109,19 @@
             win_layer {
               display-name = "WIN";
               bindings = <
-                // ╭───────────────────┬──────────────┬──────────────────┬─────────────┬─────────────╮
-                     &mo BLE             &mpv_prev      &mpv_tog_play      &mpv_next     &to_ble
-                // ╰───────────────────┴──────────────┴──────────────────┴─────────────┴─────────────╯
+                // ╭─────────────────────────┬──────────────┬──────────────────┬─────────────┬─────────────╮
+                     &mo_to BLE OUT_BLE BT     &mpv_prev      &mpv_tog_play      &mpv_next     &to_ble
+                // ╰─────────────────────────┴──────────────┴──────────────────┴─────────────┴─────────────╯
               >;
               sensor-bindings = <&rot_encoder>;
             };
 
             bt_layer {
-              display-name = "BASE";
+              display-name = "BT";
               bindings = <
-                // ╭─────────────┬──────────────┬──────────────────┬─────────────┬─────────────╮
-                     &mo BLE      &kp C_PREVIOUS   &kp KP_ENTER      &kp BSPC      &to_usb
-                // ╰─────────────┴──────────────┴──────────────────┴─────────────┴─────────────╯
+                // ╭─────────────────────────┬────────────────────┬──────────────────┬─────────────┬─────────────╮
+                     &mo_to BLE OUT_USB WIN     &kp C_PREVIOUS        &kp KP_ENTER      &kp BSPC      &to_usb
+                // ╰─────────────────────────┴────────────────────┴──────────────────┴─────────────┴─────────────╯
               >;
               sensor-bindings = <&inc_dec_kp LEFT RIGHT>;
             };
