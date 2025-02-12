@@ -100,14 +100,14 @@
               #binding-cells = <2>;
               flavor = "hold-preferred";
               tapping-term-ms = <200>;
-              bindings = <&mo BLE>, <&out_to OUT_BLE BT>;
+              bindings = <&mo>, <&to_ble>;
             };
             mo_to_win: mo_to_win {
               compatible = "zmk,behavior-hold-tap";
               #binding-cells = <2>;
               flavor = "hold-preferred";
               tapping-term-ms = <200>;
-              bindings = <&mo BLE>, <&out_to OUT_USB WIN >;
+              bindings = <&mo>, <&to_usb>;
             };
         };
         keymap {
@@ -117,7 +117,7 @@
               display-name = "WIN";
               bindings = <
                 // ╭─────────────────────────┬──────────────┬──────────────────┬─────────────┬─────────────╮
-                     &mo_to_bt     &mpv_prev      &mpv_tog_play      &mpv_next     &to_ble
+                     &mo_to_bt BLE 0   &mpv_prev      &mpv_tog_play      &mpv_next     &to_ble
                 // ╰─────────────────────────┴──────────────┴──────────────────┴─────────────┴─────────────╯
               >;
               sensor-bindings = <&rot_encoder>;
@@ -127,7 +127,7 @@
               display-name = "BT";
               bindings = <
                 // ╭─────────────────────────┬────────────────────┬──────────────────┬─────────────┬─────────────╮
-                     &mo_to_win     &kp C_PREVIOUS        &kp KP_ENTER      &kp BSPC      &to_usb
+                     &mo_to_win BLE 0   &kp C_PREVIOUS        &kp KP_ENTER      &kp BSPC      &to_usb
                 // ╰─────────────────────────┴────────────────────┴──────────────────┴─────────────┴─────────────╯
               >;
               sensor-bindings = <&inc_dec_kp LEFT RIGHT>;
