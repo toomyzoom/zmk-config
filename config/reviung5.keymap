@@ -14,6 +14,7 @@
 #define BT 1
 #define BLE 2
 #define WIN_ALT 3
+#define WIN_ALT1 4
 / {
     macros {
         mpv_tog_play: mpv_tog_play {
@@ -141,7 +142,7 @@
               display-name = "WIN";
               bindings = <
                 // ╭─────────────────────────┬──────────────┬──────────────────┬─────────────┬─────────────╮
-                     &mo_to_bt BLE 0   &mpv_prev      &mpv_tog_play      &mpv_next     &tog WIN_ALT
+                     &mo_to_bt WIN_ALT1 0   &mpv_prev      &mpv_tog_play      &mpv_next     &tog WIN_ALT
                 // ╰─────────────────────────┴──────────────┴──────────────────┴─────────────┴─────────────╯
               >;
               sensor-bindings = <&rot_encoder_plbk>;
@@ -171,11 +172,23 @@
               display-name = "WIN_ALT";
               bindings = <
                 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-                     &trans           &kp F1       &trans        &kp F4      &bt BT_CLR
+                     &trans           &kp F1       &trans        &kp F4        &trans 
+                // ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯
+              >;
+              sensor-bindings = <&rot_encoder_plbk>;
+            };
+
+
+            win_alt1_layer {
+              display-name = "WIN_ALT1";
+              bindings = <
+                // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+                     &trans     &ext_power EP_OFF   &bt BT_PRV    &bt BT_NXT    &bt BT_CLR
                 // ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯
               >;
               sensor-bindings = <&rot_encoder_vol>;
             };
+
 
 
         };
