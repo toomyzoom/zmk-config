@@ -152,7 +152,7 @@
               display-name = "BT";
               bindings = <
                 // ╭─────────────────────────┬────────────────────┬──────────────────┬─────────────┬─────────────╮
-                     &mo_to_win BLE 0   &kp C_PREVIOUS        &kp KP_ENTER      &kp BSPC      &to_usb
+                     &mo_to_win BLE 0   &kp C_PREVIOUS        &kp KP_ENTER      &kp BSPC      &kp C_POWER
                 // ╰─────────────────────────┴────────────────────┴──────────────────┴─────────────┴─────────────╯
               >;
               sensor-bindings = <&inc_dec_kp LEFT RIGHT>;
