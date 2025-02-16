@@ -15,6 +15,12 @@
 #define BLE 2
 #define WIN_ALT 3
 #define WIN_ALT1 4
+&encoder {
+    steps = <80>;
+};
+&sensors {
+    triggers-per-rotation = <20>;
+};
 / {
     macros {
         mpv_tog_play: mpv_tog_play {
