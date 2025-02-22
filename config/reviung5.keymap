@@ -15,28 +15,13 @@
 #define BLE 2
 #define WIN_ALT 3
 #define WIN_ALT1 4
-//&encoder {
-//    a-gpios = <&pro_micro 3 (GPIO_ACTIVE_HIGH)>;
-//    b-gpios = <&pro_micro 2 (GPIO_ACTIVE_HIGH)>;
-//    steps = <80>;
-//};
 
-mlego_encoder: &encoder {
+&encoder {
   compatible = "alps,ec11";
   a-gpios = <&pro_micro 3 (GPIO_ACTIVE_HIGH )>;
   b-gpios = <&pro_micro 2 (GPIO_ACTIVE_HIGH )>;
   steps = <80>;
 };
-
-&sensors {
-  compatible = "zmk,keymap-sensors";
-  sensors = <&mlego_encoder>;
-  triggers-per-rotation = <20>;
-};
-
-//&sensors {
-//    triggers-per-rotation = <20>;
-//};
 
 / {
     macros {
