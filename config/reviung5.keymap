@@ -148,7 +148,7 @@
               display-name = "WIN";
               bindings = <
                 // ╭─────────────────────────┬──────────────┬──────────────────┬─────────────┬─────────────╮
-                     &mo_to_bt WIN_ALT1 0   &mpv_prev      &mpv_tog_play      &mpv_next     &tog WIN_ALT
+                     &mo_to_bt WIN_ALT1 0        &kp F1        &mpv_tog_play      &kp F4       &tog WIN_ALT
                 // ╰─────────────────────────┴──────────────┴──────────────────┴─────────────┴─────────────╯
               >;
               sensor-bindings = <&rot_encoder_plbk>;
@@ -178,7 +178,7 @@
               display-name = "WIN_ALT";
               bindings = <
                 // ╭───────────────────────┬─────────────┬───────────────────┬─────────────┬─────────────╮
-                     &mo_to_bt WIN_ALT1 0     &kp F1       &mpv_tog_play        &kp F4     &tog WIN_ALT 
+                     &mo_to_bt WIN_ALT1 0     &mpv_prev      &mpv_tog_play      &mpv_next    &tog WIN_ALT 
                 // ╰───────────────────────┴─────────────┴───────────────────┴─────────────┴─────────────╯
               >;
               sensor-bindings = <&rot_encoder_plbk>;
