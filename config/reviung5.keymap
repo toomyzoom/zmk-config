@@ -21,7 +21,7 @@
 //    steps = <80>;
 //};
 
-mlego_encoder: mlego_encoder {
+mlego_encoder: &encoder {
   compatible = "alps,ec11";
   a-gpios = <&pro_micro 3 (GPIO_ACTIVE_HIGH )>;
   b-gpios = <&pro_micro 2 (GPIO_ACTIVE_HIGH )>;
