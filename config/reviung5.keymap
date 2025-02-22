@@ -16,6 +16,8 @@
 #define WIN_ALT 3
 #define WIN_ALT1 4
 &encoder {
+    a-gpios = <&pro_micro 3 (GPIO_ACTIVE_HIGH)>;
+    b-gpios = <&pro_micro 2 (GPIO_ACTIVE_HIGH)>;
     steps = <80>;
 };
 &sensors {
