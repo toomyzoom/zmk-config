@@ -20,8 +20,12 @@
   compatible = "alps,ec11";
   a-gpios = <&pro_micro 3 (GPIO_PULL_UP)>;
   b-gpios = <&pro_micro 2 (GPIO_PULL_UP)>;
-  steps = <80>;
+  steps = <144>;
   status = "okay";
+};
+
+&sensors {
+  triggers-per-rotation = <36>;
 };
 
 / {
