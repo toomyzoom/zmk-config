@@ -151,24 +151,58 @@
         keymap {
             compatible = "zmk,keymap";
 
-            base_layer {
-              display-name = "BASE";
+            win_layer {
+              display-name = "WIN";
               bindings = <
-                // ╭─────────────┬──────────────┬──────────────────┬─────────────┬─────────────╮
-                     &mo BLE      &kp C_PREVIOUS  &kp C_PLAY_PAUSE    &kp C_NEXT   &kp C_MUTE
-                // ╰─────────────┴──────────────┴──────────────────┴─────────────┴─────────────╯
+                // ╭─────────────────────────┬──────────────┬──────────────────┬─────────────┬─────────────╮
+                     &mo_to_bt WIN_ALT1 0        &kp F1        &mpv_tog_play      &kp F4       &tog WIN_ALT
+                // ╰─────────────────────────┴──────────────┴──────────────────┴─────────────┴─────────────╯
               >;
-              sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+              sensor-bindings = <&inc_dec_kp F13 F14>;
+            };
+
+            bt_layer {
+              display-name = "BT";
+              bindings = <
+                // ╭─────────────────────────┬────────────────────┬──────────────────┬─────────────┬─────────────╮
+                     &mo_to_win BLE 0   &kp C_PREVIOUS        &kp KP_ENTER      &kp BSPC      &kp C_POWER
+                // ╰─────────────────────────┴────────────────────┴──────────────────┴─────────────┴─────────────╯
+              >;
+              sensor-bindings = <&inc_dec_kp LEFT RIGHT>;
             };
 
             ble_layer {
               display-name = "BLE";
               bindings = <
                 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-                     &trans     &out OUT_TOG   &bt BT_PRV    &bt BT_NXT    &bt BT_CLR
+                     &trans     &ext_power EP_OFF   &bt BT_PRV    &bt BT_NXT    &bt BT_CLR
                 // ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯
               >;
+              sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
             };
+
+            win_alt_layer {
+              display-name = "WIN_ALT";
+              bindings = <
+                // ╭───────────────────────┬─────────────┬───────────────────┬─────────────┬─────────────╮
+                     &mo_to_bt WIN_ALT1 0     &mpv_prev      &mpv_tog_play      &mpv_next    &tog WIN_ALT 
+                // ╰───────────────────────┴─────────────┴───────────────────┴─────────────┴─────────────╯
+              >;
+              sensor-bindings = <&rot_encoder_plbk>;
+            };
+
+
+            win_alt1_layer {
+              display-name = "WIN_ALT1";
+              bindings = <
+                // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+                     &trans     &ext_power EP_OFF   &bt BT_PRV    &bt BT_NXT    &bt BT_CLR
+                // ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯
+              >;
+              sensor-bindings = <&rot_encoder_vol>;
+            };
+
+
 
         };
 };
